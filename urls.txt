@@ -1,0 +1,30 @@
+billInfo
+http://localhost:8000/standard-service/billInfo
+http://localhost:8000/standard-service/billInfo-feign
+
+billPayment
+http://localhost:8000/standard-service/payment-feign
+http://localhost:8000/standard-service/payment-feign
+
+Eureka
+http://localhost:8761/
+
+API GATEWAY
+http://localhost:8765/standard-service/billInfo-feign
+{
+  "serviceCode": "EtisalatBillInfo",
+  "partner": "Etisalat",
+  "billNumber": "01150951410"
+}
+
+http://localhost:8765/standard-service/payment-feign
+{
+  "serviceCode": "EtisalatBillPayment",
+  "partner": "Etisalat",
+  "billId": "1000",
+  "dueAmount": 10,
+  "fees": 2 
+}
+
+docker run -p 8000:8000 alialiouda/training-spring-cloud-config-server:0.0.1-SNAPSHOT
+
